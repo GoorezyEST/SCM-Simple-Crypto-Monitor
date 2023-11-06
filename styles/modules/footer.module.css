@@ -1,0 +1,136 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 0;
+  background-color: var(--green);
+}
+
+.nav {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  user-select: none;
+}
+
+.logo {
+  height: 42px;
+}
+
+.logo > svg {
+  height: 100%;
+  width: auto;
+}
+
+.logo > svg > path {
+  fill: var(--black);
+}
+
+.nav > ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 64px;
+  font-weight: normal;
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: calc(1rem * 1.2);
+}
+
+.nav > ul > li,
+.nav > span {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav > span::after,
+.nav > ul > li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2.5%;
+  left: 0;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+}
+
+.nav > span::after {
+  background-color: var(--black);
+}
+.nav > ul > li::after {
+  background-color: var(--black);
+}
+
+.nav > span:hover::after,
+.nav > ul > li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+.nav > span {
+  font-weight: normal;
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: calc(1rem * 1.2);
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  max-width: 1280px;
+  background-color: var(--black);
+  height: 1px;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.copyright > ul {
+  display: flex;
+  list-style: none;
+  gap: 64px;
+  font-size: 1rem;
+}
+
+.copyright > ul > li > a {
+  text-decoration: none;
+  color: var(--black);
+  display: inline-block;
+  position: relative;
+}
+
+.copyright > ul > li > a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black);
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+}
+
+.copyright > ul > li > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+.copyright > p {
+  font-size: 0.75rem;
+}
