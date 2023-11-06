@@ -1,5 +1,3 @@
-![SCV Logo SVG](https://i.imgur.com/r7FhvI6.png)
-
 # SCV - Simple Crypto Viewer
 
 Una simple aplicación singlepage para poder ver las cotizaciones de las criptomonedas más populares, asi como también, para previsualizar sus valores al convertirlas a otras monedas.
