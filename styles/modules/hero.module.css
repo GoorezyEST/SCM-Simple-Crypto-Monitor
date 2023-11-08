@@ -20,7 +20,7 @@
 }
 
 .logo {
-  height: 42px;
+  height: 32px;
 }
 
 .logo > svg {
@@ -41,13 +41,15 @@
 }
 
 .nav > ul > li,
-.nav > span {
+.contact,
+.language {
   display: inline-block;
   position: relative;
   cursor: pointer;
 }
 
-.nav > span::after,
+.contact::after,
+.language::after,
 .nav > ul > li::after {
   content: "";
   position: absolute;
@@ -60,26 +62,96 @@
   transition: transform 0.25s ease-out;
 }
 
-.nav > span::after {
+.contact::after {
   background-color: var(--green);
 }
-.nav > ul > li::after {
+.nav > ul > li::after,
+.language::after {
   background-color: var(--white);
 }
 
-.nav > span:hover::after,
+.contact:hover::after,
+.language:hover::after,
 .nav > ul > li:hover::after {
   transform: scaleX(1);
   transform-origin: bottom center;
 }
 
-.nav > span {
+.side {
+  display: flex;
+  align-items: center;
+  width: auto;
+  gap: 64px;
+}
+
+.contact {
   font-weight: normal;
   color: var(--green);
   font-size: 1rem;
   font-weight: 400;
   line-height: calc(1rem * 1.2);
   cursor: pointer;
+}
+
+.language {
+  font-weight: normal;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: calc(1rem * 1.2);
+  cursor: pointer;
+}
+
+.currencies {
+  display: inline-block;
+  list-style: none;
+}
+
+.currencies > li {
+  float: left;
+  width: auto;
+  height: calc(1rem * 1.2);
+  line-height: calc(1rem * 1.2);
+  font-weight: normal;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sub_currencies {
+  transform: scale(0);
+  transform-origin: top center;
+  transition: all 300ms ease-in-out;
+  list-style: none;
+}
+
+.sub_currencies li {
+  line-height: calc(1rem * 1.2);
+  font-weight: normal;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 8px 4px;
+  text-align: center;
+  transform: scale(0);
+  transform-origin: top center;
+  transition: all 200ms ease-in-out;
+}
+
+.sub_currencies li:hover {
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.currencies > li:hover .sub_currencies li {
+  transform: scale(1);
+}
+
+.currencies > li:hover .sub_currencies {
+  transform: scale(1);
 }
 
 .content {
@@ -135,6 +207,12 @@
   border-radius: 8px;
   line-height: calc(1rem * 1.2);
   cursor: pointer;
+  box-shadow: inset 0 0 4px var(--green);
+  transition: all 200ms ease-in-out;
+}
+
+.cta:hover {
+  box-shadow: inset 0 0 10px var(--green);
 }
 
 .scroll {
