@@ -4,10 +4,8 @@ import BitcoinIcon from "../icons/bitcoinIcon";
 import BNBIcon from "../icons/bnbIcon";
 import CardanoIcon from "../icons/cardanoIcon";
 import EthereumIcon from "../icons/ethereumIcon";
-import SolanaIcon from "../icons/solanaIcon";
 import USDCIcon from "../icons/usdcIcon";
 import USDTIcon from "../icons/usdtIcon";
-import XRPIcon from "../icons/xrpIcon";
 
 function BackgroundDecoration() {
   return (
@@ -26,14 +24,14 @@ function BackgroundDecoration() {
         <USDCIcon />
       </div>
       <div className={styles.icon} style={{ top: "2.5%", left: "2.5%" }}>
-        <SolanaIcon />
+        <USDTIcon />
       </div>
       <div className={styles.icon} style={{ top: "2.5%", right: "2.5%" }}>
         <BitcoinIcon />
       </div>
       {/*Second row top*/}
       <div className={styles.icon} style={{ top: "17.5%", left: "10.5%" }}>
-        <SolanaIcon />
+        <USDTIcon />
       </div>
       <div className={styles.icon} style={{ top: "17.5%", right: "10.5%" }}>
         <BitcoinIcon />
@@ -58,7 +56,7 @@ function BackgroundDecoration() {
         <USDTIcon />
       </div>
       <div className={styles.icon} style={{ top: "35%", right: "40%" }}>
-        <SolanaIcon />
+        <USDTIcon />
       </div>
       <div className={styles.icon} style={{ top: "35%", left: "2.5%" }}>
         <USDCIcon />
@@ -77,7 +75,7 @@ function BackgroundDecoration() {
         <BitcoinIcon />
       </div>
       <div className={styles.icon} style={{ top: "55%", right: "30%" }}>
-        <SolanaIcon />
+        <USDTIcon />
       </div>
       <div className={styles.icon} style={{ top: "55%", right: "50%" }}>
         <USDCIcon />
@@ -93,7 +91,7 @@ function BackgroundDecoration() {
         <USDCIcon />
       </div>
       <div className={styles.icon} style={{ top: "75%", right: "40%" }}>
-        <SolanaIcon />
+        <USDTIcon />
       </div>
       <div className={styles.icon} style={{ top: "75%", left: "2.5%" }}>
         <CardanoIcon />
@@ -103,7 +101,7 @@ function BackgroundDecoration() {
       </div>
       {/*Sixth row top*/}
       <div className={styles.icon} style={{ top: "92.5%", left: "10.5%" }}>
-        <SolanaIcon />
+        <USDTIcon />
       </div>
       <div className={styles.icon} style={{ top: "92.5%", right: "10.5%" }}>
         <USDCIcon />
