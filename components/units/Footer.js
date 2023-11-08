@@ -2,21 +2,17 @@ import React from "react";
 import styles from "@/styles/modules/footer.module.css";
 import SCVLogo from "../icons/scvLogo";
 import Link from "next/link";
+import { useGlobal } from "@/context/GlobalContext";
 
 function Footer() {
+  const { langSettings } = useGlobal();
+
   return (
     <footer className={styles.container}>
-      <nav className={styles.nav}>
-        <div className={styles.logo}>
-          <SCVLogo />
-        </div>
-        <ul>
-          <li>Home</li>
-          <li>Featured</li>
-          <li>Convert</li>
-        </ul>
-        <span>Get in touch</span>
-      </nav>
+      <div className={styles.logo}>
+        <SCVLogo />
+      </div>
+
       <div className={styles.line}></div>
       <div className={styles.copyright}>
         <ul>
@@ -27,7 +23,7 @@ function Footer() {
               noopenner="true"
               noreferrer="true"
             >
-              Github
+              {langSettings.footer.five}
             </Link>
           </li>
           <li>
@@ -37,7 +33,7 @@ function Footer() {
               noopenner="true"
               noreferrer="true"
             >
-              LinkedIn
+              {langSettings.footer.six}
             </Link>
           </li>
           <li>
@@ -47,11 +43,15 @@ function Footer() {
               noopenner="true"
               noreferrer="true"
             >
-              Portfolio
+              {langSettings.footer.seven}
             </Link>
           </li>
         </ul>
-        <p>© Copyright. All rights reserverd</p>
+        <p style={{ textAlign: "center" }}>
+          {langSettings.footer.eight}
+          <br />
+          {langSettings.footer.nine}
+        </p>
       </div>
     </footer>
   );
