@@ -1,4 +1,4 @@
-![SCM Logo SVG](https://i.imgur.com/BTy5xrn.png)
+![SCM Logo SVG](https://i.imgur.com/YdxvMP4.png)
 
 # SCM - Simple Crypto Monitor
 
