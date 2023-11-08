@@ -1,11 +1,15 @@
-# SCV - Simple Crypto Viewer
+![SCM Logo SVG](https://i.imgur.com/BTy5xrn.png)
+
+# SCM - Simple Crypto Monitor
 
 Una simple aplicación singlepage para poder ver las cotizaciones de las criptomonedas más populares, asi como también, para previsualizar sus valores al convertirlas a otras monedas.
-Esta aplicación utiliza la API de CoinGecko.
+
+Esta aplicación funciona gracias a la **API de CoinGecko.**
 
 ## Dependencias:
 
-- ...
+- next: 14.0.1
+- gsap: ^3.12.2
 
 ## Scripts:
 
