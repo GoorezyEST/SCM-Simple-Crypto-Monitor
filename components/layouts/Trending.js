@@ -38,7 +38,7 @@ function Trending() {
   }
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="trending-section">
       <div className={styles.text}>
         <span>{langSettings.trending.one}</span>
         <h2>{langSettings.trending.two}</h2>
@@ -56,13 +56,13 @@ function Trending() {
           </thead>
           <tbody>
             {cryptoInformation &&
-              cryptoInformation.map((crypto) => {
+              cryptoInformation.map((crypto, index) => {
                 const IconComponent = getIconForCrypto(
                   crypto.symbol.toUpperCase()
                 );
 
                 return (
-                  <tr key={crypto.id}>
+                  <tr key={index}>
                     <td className={styles.currencyCell}>
                       {IconComponent}
                       {crypto.symbol.toUpperCase()}/
@@ -79,7 +79,7 @@ function Trending() {
                         color:
                           crypto.last_24[currentCurrency] < 0
                             ? "var(--red)"
-                            : "var(--good)",
+                            : "var(--green)",
                       }}
                     >
                       {crypto.last_24[currentCurrency].toFixed(2)}&nbsp;%
@@ -89,7 +89,7 @@ function Trending() {
                         color:
                           crypto.last_week[currentCurrency] < 0
                             ? "var(--red)"
-                            : "var(--good)",
+                            : "var(--green)",
                       }}
                     >
                       {crypto.last_week[currentCurrency].toFixed(2)}&nbsp;%
@@ -99,7 +99,7 @@ function Trending() {
                         color:
                           crypto.last_month[currentCurrency] < 0
                             ? "var(--red)"
-                            : "var(--good)",
+                            : "var(--green)",
                       }}
                     >
                       {crypto.last_month[currentCurrency].toFixed(2)}&nbsp;%

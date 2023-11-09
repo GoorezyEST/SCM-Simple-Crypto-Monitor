@@ -93,7 +93,7 @@ function Convert() {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="convert-section">
       <div className={styles.text}>
         <span>{langSettings.convert.one}</span>
         <h3>{langSettings.convert.two}</h3>
