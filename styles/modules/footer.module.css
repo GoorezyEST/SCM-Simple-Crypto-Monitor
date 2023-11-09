@@ -9,6 +9,13 @@
   margin-top: 64px;
 }
 
+.start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
 .logo {
   height: 42px;
 }
@@ -20,6 +27,45 @@
 
 .logo > svg > path {
   fill: var(--black);
+}
+
+.navigation {
+  width: 100%;
+  max-width: 1280px;
+}
+
+.navigation > ul {
+  display: flex;
+  list-style: none;
+  gap: 64px;
+  font-size: 1rem;
+}
+
+.navigation > ul > li {
+  text-decoration: none;
+  color: var(--black);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.navigation > ul > li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black);
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+}
+
+.navigation > ul > li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
 }
 
 .line {
