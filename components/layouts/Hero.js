@@ -1,72 +1,68 @@
-import React from "react";
-import SCVLogo from "../icons/scvLogo";
+import React, { useState } from "react";
 import styles from "@/styles/modules/hero.module.css";
 import ScrollDownIcon from "../icons/scrollDownIcon";
 import { useGlobal } from "@/context/GlobalContext";
-import { CurrenciesList } from "@/data/Currencies";
+import Navbar from "../units/Navbar";
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+
+const variants = {
+  visible: { opacity: 1, y: 0 },
+  hide: { opacity: 0, y: -100 },
+};
 
 function Hero() {
-  const {
-    lang,
-    langSettings,
-    swapLanguage,
-    currentCurrency,
-    setCurrentCurrency,
-  } = useGlobal();
+  const { langSettings } = useGlobal();
 
-  const changeLang = () => {
-    if (lang === "es") {
-      swapLanguage("en");
-    } else {
-      swapLanguage("es");
-    }
+  const [showNav, setShowNav] = useState(true);
+  const lastScrollPosition = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPosition = window.scrollY;
+      if (currentScrollPosition > lastScrollPosition.current) {
+        if (showNav) {
+          setShowNav(false);
+        }
+      } else {
+        if (!showNav) {
+          setShowNav(true);
+        }
+      }
+      lastScrollPosition.current = currentScrollPosition;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showNav]);
+
+  gsap.registerPlugin(ScrollToPlugin);
+
+  const scrollToTrending = () => {
+    const section = document.querySelector("#trending-section");
+
+    gsap.to(window, {
+      duration: 1.25,
+      scrollTo: section,
+      ease: "power1.in",
+    });
   };
 
   return (
-    <section className={styles.container}>
-      <nav className={styles.nav}>
-        <div className={styles.logo}>
-          <SCVLogo />
-        </div>
-        <ul>
-          <li>{langSettings.nav.one}</li>
-          <li>{langSettings.nav.two}</li>
-          <li>{langSettings.nav.three}</li>
-        </ul>
-        <div className={styles.side}>
-          <ul className={styles.currencies}>
-            <li>
-              {currentCurrency.toUpperCase()}
-              <ul className={styles.sub_currencies}>
-                {CurrenciesList.map((item) => {
-                  if (item !== currentCurrency) {
-                    return (
-                      <li
-                        key={item}
-                        onClick={() => {
-                          setCurrentCurrency(item);
-                        }}
-                      >
-                        {item.toUpperCase()}
-                      </li>
-                    );
-                  }
-                })}
-              </ul>
-            </li>
-          </ul>
-          <span
-            className={styles.language}
-            onClick={() => {
-              changeLang();
-            }}
-          >
-            {langSettings.nav.four}
-          </span>
-          <span className={styles.contact}>{langSettings.nav.five}</span>
-        </div>
-      </nav>
-
+    <section className={styles.container} id="home-section">
+      <motion.div
+        className={styles.navContainer}
+        animate={showNav ? "visible" : "hide"}
+        variants={variants}
+        transition={{
+          duration: 0.35,
+        }}
+      >
+        <Navbar />
+      </motion.div>
       <div className={styles.content}>
         <div className={styles.text}>
           <span>{langSettings.hero.one}</span>
@@ -81,7 +77,9 @@ function Hero() {
             {langSettings.hero.five}
           </p>
         </div>
-        <button className={styles.cta}>{langSettings.hero.six}</button>
+        <button className={styles.cta} onClick={scrollToTrending}>
+          {langSettings.hero.six}
+        </button>
       </div>
 
       <div className={styles.scroll}>
