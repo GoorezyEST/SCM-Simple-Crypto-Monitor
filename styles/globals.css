@@ -16,6 +16,7 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  background-color: var(--black);
 }
 
 /* Chrome, Safari, Edge, Opera */
