@@ -5,8 +5,9 @@
 }
 
 :root {
-  --black: #050505;
-  --white: #fff;
+  --black: #1f1f1f;
+  --black-shade: #212121;
+  --white: #f1f1f1;
   --green: #5adef0;
   --good: #78f05a;
   --red: #f05a5a;
@@ -48,6 +49,21 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--green);
   border: 6px solid var(--black);
   border-radius: 8px;
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+}
+
+tr,
+th {
+  border-bottom: 1px solid #f1f1f13a;
+}
+
+tr:last-child {
+  border-bottom: none;
 }
 
 .loading_container {
