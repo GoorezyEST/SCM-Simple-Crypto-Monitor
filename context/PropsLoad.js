@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import { useGlobal } from "./GlobalContext";
 import SCVLogo from "@/components/icons/scvLogo";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export function PropsLoad({ children }) {
   const { isHydrated } = useGlobal();
@@ -16,14 +18,25 @@ export function PropsLoad({ children }) {
 
   return (
     <>
-      {isHydrated && (
-        <div className="loading_container">
-          <div className="loading_logo">
-            <SCVLogo />
-          </div>
-          <span className="loading_text">Cargando</span>
-        </div>
-      )}
+      <AnimatePresence mode="wait">
+        {isHydrated && (
+          <motion.div
+            className="loading_container"
+            initial={{ x: 0 }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{
+              duration: 0.225,
+              ease: "circIn",
+            }}
+          >
+            <div className="loading_logo">
+              <SCVLogo />
+            </div>
+            <span className="loading_text">Cargando</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {children}
     </>
   );
