@@ -10,6 +10,7 @@ import ChevronDownIcon from "../icons/chevronDownIcon";
 import { useGlobal } from "@/context/GlobalContext";
 import { formatPrice } from "@/functions/Utilities";
 import RefreshIcon from "../icons/refreshIcon";
+import { motion } from "framer-motion";
 
 function Convert() {
   const { cryptoInformation, currentCurrency, langSettings } = useGlobal();
@@ -95,12 +96,58 @@ function Convert() {
   return (
     <section className={styles.container} id="convert-section">
       <div className={styles.text}>
-        <span>{langSettings.convert.one}</span>
-        <h3>{langSettings.convert.two}</h3>
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
+          {langSettings.convert.one}
+        </motion.span>
+        <motion.h3
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
+          {langSettings.convert.two}
+        </motion.h3>
       </div>
       <div className={styles.previsualize}>
-        <span>{langSettings.convert.three}</span>
-        <div className={styles.previsualize_item}>
+        <motion.div
+          className={styles.decoration_usdc}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
+          <USDCIcon />
+        </motion.div>
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
+          {langSettings.convert.three}
+        </motion.span>
+        <motion.div
+          className={styles.previsualize_item}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
           <div className={styles.previsualize_number}>
             <span>{langSettings.convert.four}</span>
             <input type="number" defaultValue="0" ref={fromInputRef} />
@@ -150,8 +197,16 @@ function Convert() {
                 })}
             </div>
           </div>
-        </div>
-        <div className={styles.previsualize_item}>
+        </motion.div>
+        <motion.div
+          className={styles.previsualize_item}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
           <div className={styles.previsualize_number}>
             <span>{langSettings.convert.five}</span>
             <input type="number" defaultValue="0" disabled ref={toInputRef} />
@@ -200,8 +255,16 @@ function Convert() {
                 })}
             </div>
           </div>
-        </div>
-        <div className={styles.buttons}>
+        </motion.div>
+        <motion.div
+          className={styles.buttons}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
           <button className={styles.cta} onClick={() => convertCryptos()}>
             {langSettings.convert.six}
           </button>
@@ -214,7 +277,7 @@ function Convert() {
           >
             {langSettings.convert.seven}
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
