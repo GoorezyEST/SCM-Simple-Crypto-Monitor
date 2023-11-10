@@ -4,12 +4,12 @@ import { useGlobal } from "@/context/GlobalContext";
 import { formatPrice } from "@/functions/Utilities";
 import BitcoinIcon from "../icons/bitcoinIcon";
 import BNBIcon from "../icons/bnbIcon";
-import CardanoIcon from "../icons/cardanoIcon";
 import EthereumIcon from "../icons/ethereumIcon";
 import USDCIcon from "../icons/usdcIcon";
 import USDTIcon from "../icons/usdtIcon";
 import Link from "next/link";
 import SolanaIcon from "../icons/solanaIcon";
+import { motion } from "framer-motion";
 
 function Trending() {
   const { cryptoInformation, currentCurrency, langSettings } = useGlobal();
@@ -39,20 +39,75 @@ function Trending() {
 
   return (
     <section className={styles.container} id="trending-section">
+      <motion.div
+        className={styles.decoration_btc}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.25,
+          delay: 0.125,
+        }}
+      >
+        <BitcoinIcon />
+      </motion.div>
+      <motion.div
+        className={styles.decoration_bnb}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.25,
+          delay: 0.125,
+        }}
+      >
+        <BNBIcon />
+      </motion.div>
       <div className={styles.text}>
-        <span>{langSettings.trending.one}</span>
-        <h2>{langSettings.trending.two}</h2>
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
+          {langSettings.trending.one}
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
+          {langSettings.trending.two}
+        </motion.h2>
       </div>
-      <div className={styles.table_container}>
+      <motion.div
+        className={styles.table_container}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.25,
+          delay: 0.125,
+        }}
+      >
         <table className={styles.table}>
           <thead>
-            <tr>
+            <motion.tr
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: 0.25,
+                delay: 0.125,
+              }}
+            >
               <th>{langSettings.trending.table.one}</th>
               <th>{langSettings.trending.table.two}</th>
               <th>{langSettings.trending.table.three}</th>
               <th>{langSettings.trending.table.four}</th>
               <th>{langSettings.trending.table.five}</th>
-            </tr>
+            </motion.tr>
           </thead>
           <tbody>
             {cryptoInformation &&
@@ -62,11 +117,21 @@ function Trending() {
                 );
 
                 return (
-                  <tr key={index}>
-                    <td className={styles.currencyCell}>
-                      {IconComponent}
-                      {crypto.symbol.toUpperCase()}/
-                      {currentCurrency.toUpperCase()}
+                  <motion.tr
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{
+                      duration: 0.25,
+                      delay: 0.125,
+                    }}
+                  >
+                    <td>
+                      <div className={styles.currencyCell}>
+                        {IconComponent}
+                        {crypto.symbol.toUpperCase()}/
+                        {currentCurrency.toUpperCase()}
+                      </div>
                     </td>
                     <td>
                       {formatPrice(
@@ -104,13 +169,21 @@ function Trending() {
                     >
                       {crypto.last_month[currentCurrency].toFixed(2)}&nbsp;%
                     </td>
-                  </tr>
+                  </motion.tr>
                 );
               })}
           </tbody>
         </table>
-      </div>
-      <button className={styles.cta}>
+      </motion.div>
+      <motion.button
+        className={styles.cta}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.25,
+          delay: 0.125,
+        }}
+      >
         <Link
           href="https://www.coingecko.com/"
           target="_blank"
@@ -119,7 +192,7 @@ function Trending() {
         >
           {langSettings.trending.three}
         </Link>
-      </button>
+      </motion.button>
     </section>
   );
 }

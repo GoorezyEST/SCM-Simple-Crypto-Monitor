@@ -1,13 +1,15 @@
 .container {
   width: 100%;
-  min-height: 100vh;
+  max-width: 1280px;
+  height: auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 50;
-  margin-top: 64px;
+  margin-top: 80px;
+  position: relative;
 }
 
 .text {
@@ -30,15 +32,12 @@
   color: var(--white);
   letter-spacing: -1%;
   text-align: center;
-  line-height: calc(52px * 1.2);
+  line-height: calc(2rem * 1.2);
   margin-top: 8px;
 }
 
 .table_container {
   width: auto;
-  border: 2px solid var(--green);
-  border-radius: 8px;
-  padding: 16px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,24 +46,23 @@
 
 .table {
   color: white;
-  border-collapse: separate;
-  border-spacing: 64px 32px;
   width: auto;
   user-select: none;
   cursor: default;
+  border-collapse: collapse;
+}
+
+.currencyCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
 }
 
 .table th {
   text-align: left;
   font-weight: 300;
   opacity: 0.75;
-}
-
-.currencyCell {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
 }
 
 .table td svg {
@@ -94,4 +92,52 @@
 .cta > a {
   text-decoration: none;
   color: var(--black);
+}
+
+.decoration_btc {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 350px;
+  z-index: -1;
+}
+
+.decoration_bnb {
+  position: absolute;
+  bottom: 0;
+  right: 25%;
+  transform: translateX(50%);
+  width: 350px;
+  height: 350px;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decoration_btc > svg,
+.decoration_bnb > svg {
+  height: 100%;
+  width: auto;
+  opacity: 0.7125;
+  animation: pulse 10s linear infinite;
+}
+
+.decoration_btc > svg > g > path,
+.decoration_bnb > svg > g > path {
+  fill: var(--black-shade);
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
