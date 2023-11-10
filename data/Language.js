@@ -15,6 +15,13 @@ export const languages = {
       five: "conversions between a wide range of currencies",
       six: "Get started",
     },
+    about: {
+      one: "A LITTLE BIT",
+      two: "ABOUT US",
+      three:
+        "We are a web application developed to monitor the latest trends in cryptocurrencies. It allows users to track variations in their values over the last day, week, or month. Additionally, users can preview currency conversions between different cryptocurrencies.",
+      four: "See more",
+    },
     trending: {
       one: "FEATURED",
       two: "TRENDING CRYPTOS",
@@ -63,6 +70,13 @@ export const languages = {
       four: "Manténgase al tanto de las criptomonedas en tendencia y previsualice",
       five: "las conversiones entre una amplia gama de divisas",
       six: "Empezar",
+    },
+    about: {
+      one: "UN POCO",
+      two: "SOBRE NOSOTROS",
+      three:
+        "Somos una aplicación web para monitorear criptomonedas en tendencia. Podrás ver las variaciones de sus valores en el último día, semana o mes. Además, podrás previsualizar conversiones entre diferentes criptomonedas.",
+      four: "Ver más",
     },
     trending: {
       one: "DESTACADO",
