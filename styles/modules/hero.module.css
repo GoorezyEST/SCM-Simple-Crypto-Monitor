@@ -7,18 +7,10 @@
   align-items: center;
   z-index: 50;
   position: relative;
-}
-
-.navContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  z-index: 250;
-  padding: 16px;
-  background-color: var(--black);
+  background-image: linear-gradient(transparent 5%, var(--black) 95%),
+    linear-gradient(90deg, transparent 90%, #5adef01f 90%),
+    linear-gradient(0deg, #5adef01f 10%, transparent 10%);
+  background-size: auto auto, 15px 15px, 15px 15px;
 }
 
 .content {
