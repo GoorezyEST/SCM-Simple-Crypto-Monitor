@@ -6,7 +6,7 @@
   gap: 48px;
   padding: 48px 0;
   background-color: var(--green);
-  margin-top: 64px;
+  margin-top: 80px;
 }
 
 .start {
@@ -75,21 +75,21 @@
   height: 1px;
 }
 
-.copyright {
+.links {
+  width: 100%;
+  max-width: 1280px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
+  justify-content: space-between;
 }
 
-.copyright > ul {
+.contact > ul {
   display: flex;
   list-style: none;
   gap: 64px;
   font-size: 1rem;
 }
 
-.copyright > ul > li > a {
+.contact > ul > li > a {
   text-decoration: none;
   color: var(--black);
   display: inline-block;
@@ -97,7 +97,7 @@
   user-select: none;
 }
 
-.copyright > ul > li > a::after {
+.contact > ul > li > a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -110,7 +110,7 @@
   transition: transform 0.25s ease-out;
 }
 
-.copyright > ul > li > a:hover::after {
+.contact > ul > li > a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom center;
 }
