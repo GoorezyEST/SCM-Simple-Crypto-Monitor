@@ -6,7 +6,7 @@
   gap: 48px;
   padding: 48px 0;
   background-color: var(--green);
-  margin-top: 80px;
+  margin-top: 120px;
 }
 
 .start {
@@ -32,6 +32,8 @@
 .navigation {
   width: 100%;
   max-width: 1280px;
+  display: flex;
+  justify-content: center;
 }
 
 .navigation > ul {
@@ -73,46 +75,6 @@
   max-width: 1280px;
   background-color: var(--black);
   height: 1px;
-}
-
-.links {
-  width: 100%;
-  max-width: 1280px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.contact > ul {
-  display: flex;
-  list-style: none;
-  gap: 64px;
-  font-size: 1rem;
-}
-
-.contact > ul > li > a {
-  text-decoration: none;
-  color: var(--black);
-  display: inline-block;
-  position: relative;
-  user-select: none;
-}
-
-.contact > ul > li > a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--black);
-  transform-origin: bottom center;
-  transition: transform 0.25s ease-out;
-}
-
-.contact > ul > li > a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom center;
 }
 
 .copyright > p {

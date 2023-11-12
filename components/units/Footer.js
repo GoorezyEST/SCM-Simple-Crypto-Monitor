@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "@/styles/modules/footer.module.css";
 import SCVLogo from "../icons/scvLogo";
-import Link from "next/link";
 import { useGlobal } from "@/context/GlobalContext";
 import gsap from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
@@ -27,7 +26,10 @@ function Footer() {
 
     gsap.to(window, {
       duration: 1.25,
-      scrollTo: section,
+      scrollTo: {
+        y: section,
+        offsetY: 64,
+      },
       ease: "power1.in",
     });
   };
@@ -37,7 +39,10 @@ function Footer() {
 
     gsap.to(window, {
       duration: 1.25,
-      scrollTo: section,
+      scrollTo: {
+        y: section,
+        offsetY: 64,
+      },
       ease: "power1.in",
     });
   };
@@ -59,8 +64,9 @@ function Footer() {
       </div>
 
       <div className={styles.line}></div>
+
       <motion.div
-        className={styles.links}
+        className={styles.navigation}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
@@ -68,48 +74,13 @@ function Footer() {
           delay: 0.125,
         }}
       >
-        <div className={styles.navigation}>
-          <ul>
-            <li onClick={scrollToHome}>{langSettings.nav.one}</li>
-            <li onClick={scrollToTrending}>{langSettings.nav.two}</li>
-            <li onClick={scrollToConvert}>{langSettings.nav.three}</li>
-          </ul>
-        </div>
-        <div className={styles.contact}>
-          <ul>
-            <li>
-              <Link
-                href="https://github.com/GoorezyEST"
-                target="_blank"
-                noopenner="true"
-                noreferrer="true"
-              >
-                {langSettings.footer.five}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.linkedin.com/in/franco-espinosa/"
-                target="_blank"
-                noopenner="true"
-                noreferrer="true"
-              >
-                {langSettings.footer.six}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://franco-espinosa-portafolio.vercel.app/"
-                target="_blank"
-                noopenner="true"
-                noreferrer="true"
-              >
-                {langSettings.footer.seven}
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li onClick={scrollToHome}>{langSettings.nav.one}</li>
+          <li onClick={scrollToTrending}>{langSettings.nav.two}</li>
+          <li onClick={scrollToConvert}>{langSettings.nav.three}</li>
+        </ul>
       </motion.div>
+
       <motion.div
         className={styles.copyright}
         initial={{ opacity: 0 }}
