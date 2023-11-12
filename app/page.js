@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import About from "@/components/layouts/About";
 import Navbar from "@/components/units/Navbar";
+import Contact from "@/components/layouts/Contact";
 
 const variants = {
   visible: { opacity: 1, y: 0 },
@@ -30,7 +31,6 @@ export default function Wrapper() {
       setCryptoInformation(cryptoData);
       //Set the loading state to false
       setIsHydrated(false);
-      console.log(cryptoData);
     } catch (error) {
       console.log("Error fetching data:", error);
     }
@@ -82,7 +82,7 @@ export default function Wrapper() {
 
   return (
     <main className={styles.wrapper}>
-      <motion.div
+      {/* <motion.div
         className={styles.navContainer}
         animate={showNav ? "visible" : "hide"}
         variants={variants}
@@ -91,11 +91,12 @@ export default function Wrapper() {
         }}
       >
         <Navbar />
-      </motion.div>
+      </motion.div> */}
       <Hero />
       <About />
       <Trending />
       <Convert />
+      <Contact />
       <Footer />
     </main>
   );
