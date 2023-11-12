@@ -16,7 +16,10 @@ function About() {
 
     gsap.to(window, {
       duration: 1.25,
-      scrollTo: section,
+      scrollTo: {
+        y: section,
+        offsetY: 64,
+      },
       ease: "power1.in",
     });
   };
