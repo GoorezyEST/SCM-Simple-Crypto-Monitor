@@ -6,8 +6,10 @@
 
 :root {
   --black: #1f1f1f;
-  --black-shade: #212121;
+  --black-shade: #1c1c1c;
+  --black-darker-shade: #1a1a1a;
   --white: #f1f1f1;
+  --white-shade: #eeeeee;
   --green: #5adef0;
   --good: #78f05a;
   --red: #f05a5a;
