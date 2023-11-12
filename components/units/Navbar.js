@@ -30,7 +30,9 @@ function Navbar() {
 
     gsap.to(window, {
       duration: 1.25,
-      scrollTo: section,
+      scrollTo: {
+        y: section,
+      },
       ease: "power1.in",
     });
   };
@@ -40,7 +42,10 @@ function Navbar() {
 
     gsap.to(window, {
       duration: 1.25,
-      scrollTo: section,
+      scrollTo: {
+        y: section,
+        offsetY: 64,
+      },
       ease: "power1.in",
     });
   };
@@ -50,17 +55,23 @@ function Navbar() {
 
     gsap.to(window, {
       duration: 1.25,
-      scrollTo: section,
+      scrollTo: {
+        y: section,
+        offsetY: 64,
+      },
       ease: "power1.in",
     });
   };
 
-  const scrollToFooter = () => {
-    const section = document.querySelector("#footer");
+  const scrollToContact = () => {
+    const section = document.querySelector("#contact-section");
 
     gsap.to(window, {
       duration: 1.25,
-      scrollTo: section,
+      scrollTo: {
+        y: section,
+        offsetY: 64,
+      },
       ease: "power1.in",
     });
   };
@@ -105,7 +116,7 @@ function Navbar() {
         >
           {langSettings.nav.four}
         </span>
-        <span className={styles.contact} onClick={scrollToFooter}>
+        <span className={styles.contact} onClick={scrollToContact}>
           {langSettings.nav.five}
         </span>
       </div>
