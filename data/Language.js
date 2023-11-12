@@ -43,6 +43,10 @@ export const languages = {
       six: "Convert",
       seven: "Swap",
     },
+    contact: {
+      one: "GET IN TOUCH",
+      two: "MY SOCIAL MEDIA",
+    },
     footer: {
       one: "Home",
       two: "Featured",
@@ -98,6 +102,10 @@ export const languages = {
       five: "A",
       six: "Convertir",
       seven: "Intercambiar",
+    },
+    contact: {
+      one: "PONTE EN CONTACTO",
+      two: "MIS REDES SOCIALES",
     },
     footer: {
       one: "Inicio",
