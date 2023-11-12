@@ -14,7 +14,8 @@
 }
 
 .content {
-  width: auto;
+  width: 100%;
+  padding: 1rem;
   max-width: 1280px;
   display: flex;
   flex-direction: column;
