@@ -12,7 +12,8 @@ import SolanaIcon from "../icons/solanaIcon";
 import { motion } from "framer-motion";
 
 function Trending() {
-  const { cryptoInformation, currentCurrency, langSettings } = useGlobal();
+  const { cryptoInformation, currentCurrency, langSettings, device } =
+    useGlobal();
 
   function getIconForCrypto(symbol) {
     switch (symbol) {
@@ -83,6 +84,96 @@ function Trending() {
           {langSettings.trending.two}
         </motion.h2>
       </div>
+
+      <motion.div
+        className={styles.mobile_container}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.25,
+          delay: 0.125,
+        }}
+      >
+        {cryptoInformation &&
+          cryptoInformation.map((crypto, index) => {
+            const IconComponent = getIconForCrypto(crypto.symbol.toUpperCase());
+
+            return (
+              <motion.div
+                className={styles.mobile_item}
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                  duration: 0.25,
+                  delay: 0.125,
+                }}
+              >
+                <ul>
+                  <li>
+                    <span>{langSettings.trending.table.one}</span>
+                    <div className={styles.mobile_currency}>
+                      {IconComponent}
+                      <span>
+                        {crypto.symbol.toUpperCase()}/
+                        {currentCurrency.toUpperCase()}
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <span>{langSettings.trending.table.two}</span>
+                    <p className={styles.mobile_price}>
+                      {formatPrice(
+                        crypto.price[currentCurrency],
+                        currentCurrency.toUpperCase()
+                      )}
+                    </p>
+                  </li>
+                  <li>
+                    <span>{langSettings.trending.table.three}</span>
+                    <p
+                      style={{
+                        color:
+                          crypto.last_24[currentCurrency] < 0
+                            ? "var(--red)"
+                            : "var(--green)",
+                      }}
+                    >
+                      {crypto.last_24[currentCurrency].toFixed(2)}&nbsp;%
+                    </p>
+                  </li>
+                  <li>
+                    <span>{langSettings.trending.table.four}</span>
+                    <p
+                      style={{
+                        color:
+                          crypto.last_week[currentCurrency] < 0
+                            ? "var(--red)"
+                            : "var(--green)",
+                      }}
+                    >
+                      {crypto.last_week[currentCurrency].toFixed(2)}&nbsp;%
+                    </p>
+                  </li>
+                  <li>
+                    <span>{langSettings.trending.table.five}</span>
+                    <p
+                      style={{
+                        color:
+                          crypto.last_month[currentCurrency] < 0
+                            ? "var(--red)"
+                            : "var(--green)",
+                      }}
+                    >
+                      {crypto.last_month[currentCurrency].toFixed(2)}&nbsp;%
+                    </p>
+                  </li>
+                </ul>
+              </motion.div>
+            );
+          })}
+      </motion.div>
+
       <motion.div
         className={styles.table_container}
         initial={{ opacity: 0 }}
@@ -175,6 +266,7 @@ function Trending() {
           </tbody>
         </table>
       </motion.div>
+
       <motion.button
         className={styles.cta}
         initial={{ opacity: 0 }}
