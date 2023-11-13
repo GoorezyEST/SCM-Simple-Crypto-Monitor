@@ -21,6 +21,8 @@ export const languages = {
       three:
         "We are a web application developed to monitor the latest trends in cryptocurrencies. It allows users to track variations in their values over the last day, week, or month. Additionally, users can preview currency conversions between different cryptocurrencies.",
       four: "See more",
+      mobile:
+        "We allow users to monitor value changes over the last day, week, or month and preview currency conversions.",
     },
     trending: {
       one: "FEATURED",
@@ -81,6 +83,8 @@ export const languages = {
       three:
         "Somos una aplicación web para monitorear criptomonedas en tendencia. Podrás ver las variaciones de sus valores en el último día, semana o mes. Además, podrás previsualizar conversiones entre diferentes criptomonedas.",
       four: "Ver más",
+      mobile:
+        "Permitimos a los usuarios ver los cambios de valor durante el último día, semana o mes y previsualizar las conversiones de criptos.",
     },
     trending: {
       one: "DESTACADO",
