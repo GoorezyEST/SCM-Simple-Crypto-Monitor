@@ -21,7 +21,8 @@ const variants = {
 
 export default function Wrapper() {
   //Import from the global context
-  const { setIsHydrated, setCryptoInformation } = useGlobal();
+  const { setIsHydrated, setCryptoInformation, setMobileMenuOpen } =
+    useGlobal();
 
   const initFunction = async () => {
     try {
@@ -66,6 +67,7 @@ export default function Wrapper() {
       if (currentScrollPosition > lastScrollPosition.current) {
         if (showNav) {
           setShowNav(false);
+          setMobileMenuOpen(false);
         }
       } else {
         if (!showNav) {
@@ -82,7 +84,7 @@ export default function Wrapper() {
 
   return (
     <main className={styles.wrapper}>
-      {/* <motion.div
+      <motion.div
         className={styles.navContainer}
         animate={showNav ? "visible" : "hide"}
         variants={variants}
@@ -91,13 +93,13 @@ export default function Wrapper() {
         }}
       >
         <Navbar />
-      </motion.div> */}
+      </motion.div>
       <Hero />
       <About />
       <Trending />
       <Convert />
-      <Contact />
-      <Footer />
+      {/*<Contact />
+      <Footer /> */}
     </main>
   );
 }
