@@ -7,7 +7,7 @@ import gsap from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 
 function About() {
-  const { langSettings } = useGlobal();
+  const { langSettings, device } = useGlobal();
 
   gsap.registerPlugin(ScrollToPlugin);
 
@@ -56,7 +56,7 @@ function About() {
               delay: 0.125,
             }}
           >
-            {langSettings.about.three}
+            {device ? langSettings.about.mobile : langSettings.about.three}
           </motion.p>
           <motion.button
             className={styles.cta}
