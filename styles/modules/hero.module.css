@@ -110,3 +110,22 @@
     transform: translateY(0) translateX(-50%);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .text > h1 {
+    font-size: 36px;
+    line-height: calc(36px * 1.2);
+    margin-bottom: 0;
+  }
+  .text > p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .text > h1 {
+    font-size: 28px;
+    line-height: calc(28px * 1.2);
+    margin-bottom: 0;
+  }
+}
