@@ -47,7 +47,7 @@ export default function Wrapper() {
       duration: 1.25,
       easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 2,
+      smoothTouch: false,
     });
 
     function raf(time) {
