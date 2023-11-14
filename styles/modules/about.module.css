@@ -150,6 +150,10 @@
   .image_side {
     width: 50%;
   }
+
+  .decoration {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 520px) {
