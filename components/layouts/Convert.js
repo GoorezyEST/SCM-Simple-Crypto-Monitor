@@ -198,6 +198,9 @@ function Convert() {
             </div>
           </div>
         </motion.div>
+        <div className={styles.restart} onClick={() => swapCryptos()}>
+          <RefreshIcon />
+        </div>
         <motion.div
           className={styles.previsualize_item}
           initial={{ opacity: 0 }}
@@ -268,13 +271,8 @@ function Convert() {
           <button className={styles.cta} onClick={() => convertCryptos()}>
             {langSettings.convert.six}
           </button>
-          <div className={styles.restart} onClick={() => restart()}>
-            <RefreshIcon />
-          </div>
-          <button
-            className={styles.secondary_cta}
-            onClick={() => swapCryptos()}
-          >
+
+          <button className={styles.secondary_cta} onClick={() => restart()}>
             {langSettings.convert.seven}
           </button>
         </motion.div>
