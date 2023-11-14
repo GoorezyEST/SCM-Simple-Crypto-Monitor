@@ -1,5 +1,5 @@
 {
-  "name": "scv",
+  "name": "scm-simple-crypto-monitor",
   "version": "0.1.0",
   "private": true,
   "scripts": {
