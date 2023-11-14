@@ -105,7 +105,8 @@
   }
 
   .logo > svg {
-    height: 75%;
+    height: 60%;
+    width: auto;
   }
 }
 
