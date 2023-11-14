@@ -10,6 +10,8 @@ Esta aplicación funciona gracias a la **API de CoinGecko.**
 
 - next: 14.0.1
 - gsap: ^3.12.2
+- framer-motion: ^10.16.4
+- @studio-freight/lenis: ^1.0.27
 
 ## Scripts:
 
