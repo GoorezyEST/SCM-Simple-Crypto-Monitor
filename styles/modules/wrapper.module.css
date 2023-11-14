@@ -17,4 +17,11 @@
   z-index: 250;
   padding: 16px;
   background-color: var(--black);
+  border-bottom: 1px solid var(--green);
+}
+
+@media screen and (max-width: 520px) {
+  .navContainer {
+    border-bottom: 1px solid var(--green);
+  }
 }
