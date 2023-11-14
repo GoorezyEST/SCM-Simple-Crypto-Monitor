@@ -90,3 +90,27 @@
   fill: var(--white);
   transition: all 200ms ease-in-out;
 }
+
+@media screen and (max-width: 520px) {
+  .text > h5 {
+    font-size: 24px;
+    line-height: calc(24px * 1.2);
+  }
+}
+
+@media screen and (max-width: 452px) {
+  .logo {
+    height: 32px;
+    width: 32px;
+  }
+
+  .logo > svg {
+    height: 75%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .buttons {
+    flex-direction: column;
+  }
+}

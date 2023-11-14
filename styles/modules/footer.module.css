@@ -82,3 +82,26 @@
   cursor: default;
   font-size: 0.75rem;
 }
+
+@media screen and (max-width: 1359px) {
+  .line {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 452px) {
+  .navigation > ul {
+    gap: 32px;
+  }
+}
+
+@media screen and (max-width: 348px) {
+  .navigation > ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .copyright > p {
+    width: 95%;
+    word-wrap: break-word;
+  }
+}

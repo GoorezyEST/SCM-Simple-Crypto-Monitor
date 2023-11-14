@@ -5,6 +5,7 @@ import Link from "next/link";
 import GitHubIcon from "../icons/githubIcon";
 import PortfolioIcon from "../icons/portfolioIcon";
 import { useGlobal } from "@/context/GlobalContext";
+import { motion } from "framer-motion";
 
 function Contact() {
   const { langSettings } = useGlobal();
@@ -12,10 +13,36 @@ function Contact() {
   return (
     <section className={styles.container} id="contact-section">
       <div className={styles.text}>
-        <span>{langSettings.contact.one}</span>
-        <h5>{langSettings.contact.two}</h5>
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
+          {langSettings.contact.one}
+        </motion.span>
+        <motion.h5
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: 0.125,
+          }}
+        >
+          {langSettings.contact.two}
+        </motion.h5>
       </div>
-      <div className={styles.buttons}>
+      <motion.div
+        className={styles.buttons}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.25,
+          delay: 0.125,
+        }}
+      >
         <Link
           href="https://www.linkedin.com/in/franco-espinosa/"
           target="_blank"
@@ -43,7 +70,7 @@ function Contact() {
             </div>
           </button>
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 }
