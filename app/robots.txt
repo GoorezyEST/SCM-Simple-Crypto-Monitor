@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://simple-crypto-monitor.vercel.app//sitemap.xml
