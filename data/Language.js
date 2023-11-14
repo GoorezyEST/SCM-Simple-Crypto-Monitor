@@ -43,7 +43,7 @@ export const languages = {
       four: "From",
       five: "To",
       six: "Convert",
-      seven: "Swap",
+      seven: "Restart",
     },
     contact: {
       one: "GET IN TOUCH",
@@ -105,7 +105,7 @@ export const languages = {
       four: "De",
       five: "A",
       six: "Convertir",
-      seven: "Intercambiar",
+      seven: "Reiniciar",
     },
     contact: {
       one: "PONTE EN CONTACTO",
