@@ -98,8 +98,8 @@ export default function Wrapper() {
       <About />
       <Trending />
       <Convert />
-      {/*<Contact />
-      <Footer /> */}
+      <Contact />
+      <Footer />
     </main>
   );
 }
